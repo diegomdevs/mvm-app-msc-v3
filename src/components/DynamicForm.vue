@@ -6,11 +6,11 @@ import {
   type SubmissionHandler,
 } from "vee-validate";
 import type IFormSchema from "@/interfaces/IFormSchema";
-interface IDynamicProps {
+
+defineProps<{
   schema: IFormSchema;
   submit?: SubmissionHandler;
-}
-defineProps<IDynamicProps>();
+}>();
 </script>
 
 <template>

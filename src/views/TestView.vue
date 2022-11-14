@@ -1,23 +1,20 @@
 <script setup lang="ts">
-import DynamicForm from "@/components/DynamicForm.vue";
-import * as Yup from "yup";
-import type IFormSchema from "@/interfaces/IFormSchema";
-const formSchema: IFormSchema = {
-  fields: [
-    {
-      label: "Name",
-      name: "name",
-      as: "input",
-      rules: Yup.string().required(),
-    },
-  ],
-};
-function submit(values: any) {
-  console.log(JSON.stringify(values, null, 2));
+import ThingForm from "@/components/ThingForm.vue";
+import { reactive, ref } from "vue";
+const thingFormData = ref({});
+function lol(value: any) {
+  thingFormData.value = value;
 }
 </script>
 <template>
   <main>
-    <DynamicForm :submit="submit" :schema="formSchema" />
+    <ThingForm
+      @emit-form-data="
+        (formData) => {
+          lol(formData);
+        }
+      "
+    />
   </main>
+  {{ thingFormData }}
 </template>
