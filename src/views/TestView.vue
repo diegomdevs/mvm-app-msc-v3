@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import ThingForm from "@/components/ThingForm.vue";
-import { reactive, ref } from "vue";
+import { ref } from "vue";
 const thingFormData = ref({});
 function lol(value: any) {
   thingFormData.value = value;
