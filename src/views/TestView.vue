@@ -1,20 +1,19 @@
 <script setup lang="ts">
-import ThingForm from "@/components/ThingForm.vue";
-import { ref } from "vue";
-const thingFormData = ref({});
-function lol(value: any) {
-  thingFormData.value = value;
+import DynamicForm from "@/components/DynamicForm.vue";
+import {
+  personFormFieldSchema,
+  personFormValidationSchema,
+} from "@/logic/personForm";
+function submit(values: any) {
+  console.log(JSON.stringify(values, null, 2));
 }
 </script>
 <template>
   <main>
-    <ThingForm
-      @emit-form-data="
-        (formData) => {
-          lol(formData);
-        }
-      "
+    <DynamicForm
+      :field-schema="personFormFieldSchema"
+      :validation-schema="personFormValidationSchema"
+      :submit="(values) => submit(values)"
     />
   </main>
-  {{ thingFormData }}
 </template>

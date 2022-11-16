@@ -5,11 +5,11 @@ import {
   ErrorMessage,
   type SubmissionHandler,
 } from "vee-validate";
-import type IFormSchema from "@/interfaces/IFormSchema";
+import type IFormFieldSchema from "@/interfaces/IFormFieldSchema";
 import type IValidationSchema from "@/interfaces/IValidationSchema";
 
 defineProps<{
-  fieldSchema: IFormSchema;
+  fieldSchema: IFormFieldSchema[];
   validationSchema: IValidationSchema;
   submit?: SubmissionHandler;
 }>();
@@ -17,8 +17,9 @@ defineProps<{
 
 <template>
   <Form @submit="submit" :validation-schema="validationSchema">
+    <slot />
     <div
-      v-for="{ as, name, label, children, ...attrs } in fieldSchema.fields"
+      v-for="{ as, name, label, children, ...attrs } in fieldSchema"
       :key="name"
     >
       <label :for="name"> {{ label }}</label>
