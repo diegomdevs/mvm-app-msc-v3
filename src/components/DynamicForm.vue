@@ -23,7 +23,13 @@ defineProps<{
       :key="name"
     >
       <label :for="name"> {{ label }}</label>
-      <Field :as="as" :id="name" :name="name" v-bind="attrs">
+      <Field
+        :as="as"
+        :id="name"
+        :name="name"
+        :value="attrs.modelValue"
+        v-bind="attrs"
+      >
         <template v-if="children && children.length">
           <component
             v-for="({ tag, text, ...childAttrs }, idx) in children"
