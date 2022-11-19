@@ -1,9 +1,10 @@
 <script setup lang="ts">
 import DynamicForm from "@/components/DynamicForm.vue";
 import {
-  parentFormFieldSchema,
-  parentFormValidationSchema,
-} from "@/logic/parentForm";
+  studentValidationFormSchema,
+  studentFormFieldSchema,
+} from "@/logic/studentForm";
+
 function onSubmit(values: any) {
   console.log(JSON.stringify(values, null, 2));
 }
@@ -11,8 +12,8 @@ function onSubmit(values: any) {
 <template>
   <main>
     <DynamicForm
-      :field-schema="parentFormFieldSchema"
-      :validation-schema="parentFormValidationSchema"
+      :field-schema="studentFormFieldSchema"
+      :validation-schema="studentValidationFormSchema"
       :submit="(values) => onSubmit(values)"
     />
   </main>
