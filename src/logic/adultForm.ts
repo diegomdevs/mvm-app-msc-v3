@@ -3,7 +3,7 @@ import type IAdultFormValidationSchema from "@/interfaces/IAdultFormValidationSc
 import type IFormFieldSchema from "@/interfaces/IFormFieldSchema";
 import {
   customerFieldFormSchema,
-  customerValidationFormSchema,
+  customerFormValidationSchema,
 } from "./customerForm";
 export const adultFormFieldSchema: IFormFieldSchema[] = [
   ...customerFieldFormSchema,
@@ -12,7 +12,7 @@ export const adultFormFieldSchema: IFormFieldSchema[] = [
   { name: "job", as: "input", label: "Oficio" },
 ];
 export const adultFormValidationSchema: IAdultFormValidationSchema = {
-  ...customerValidationFormSchema,
+  ...customerFormValidationSchema,
   address: Yup.string(),
   phoneNumber: Yup.string().min(11).max(11),
   job: Yup.string(),

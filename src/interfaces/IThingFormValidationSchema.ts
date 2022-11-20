@@ -1,6 +1,7 @@
 import type TYupSchema from "@/types/TYupSchema";
-import type IValidationSchema from "./IValidationSchema";
+import type IFormValidationSchema from "./IFormValidationSchema";
 
-export default interface IThingFormValidationSchema extends IValidationSchema {
+export default interface IThingFormValidationSchema
+  extends IFormValidationSchema {
   name?: TYupSchema;
 }

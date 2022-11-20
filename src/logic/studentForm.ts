@@ -3,7 +3,7 @@ import type IFormField from "@/interfaces/IFormFieldSchema";
 import type IStudentFormValidationSchema from "@/interfaces/IStudentFormValidationSchema";
 import {
   customerFieldFormSchema,
-  customerValidationFormSchema,
+  customerFormValidationSchema,
 } from "@/logic/customerForm";
 export const studentFormFieldSchema: IFormField[] = [
   ...customerFieldFormSchema,
@@ -57,8 +57,8 @@ export const studentFormFieldSchema: IFormField[] = [
     ],
   },
 ];
-export const studentValidationFormSchema: IStudentFormValidationSchema = {
-  ...customerValidationFormSchema,
+export const studentFormValidationSchema: IStudentFormValidationSchema = {
+  ...customerFormValidationSchema,
   age: Yup.string().max(2),
   birthday: Yup.date(),
   birthplace: Yup.string(),

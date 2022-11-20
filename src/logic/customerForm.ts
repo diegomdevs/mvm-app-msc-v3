@@ -19,7 +19,7 @@ export const customerFieldFormSchema: IFormField[] = [
     label: "Grado de instrucción",
   },
 ];
-export const customerValidationFormSchema: ICustomerFormValidationSchema = {
+export const customerFormValidationSchema: ICustomerFormValidationSchema = {
   ...personFormValidationSchema,
   ci: Yup.string().min(7),
   degreeOfInstruction: Yup.string(),

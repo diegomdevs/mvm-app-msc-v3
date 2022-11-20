@@ -1,7 +1,7 @@
 import type TFieldModelValue from "@/types/TFieldModelValue";
-import type IFieldChildren from "./IFormFieldChildren";
+import type IFieldChildren from "./IFormFieldChildrenSchema";
 
-export default interface IFormField {
+export default interface IFormFieldSchema {
   label: string;
   name: string;
   as: string;

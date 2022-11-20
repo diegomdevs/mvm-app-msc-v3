@@ -6,18 +6,17 @@ import {
   type SubmissionHandler,
 } from "vee-validate";
 import type IFormFieldSchema from "@/interfaces/IFormFieldSchema";
-import type IValidationSchema from "@/interfaces/IValidationSchema";
+import type IFormValidationSchema from "@/interfaces/IFormValidationSchema";
 
 defineProps<{
   fieldSchema: IFormFieldSchema[];
-  validationSchema: IValidationSchema;
+  validationSchema: IFormValidationSchema;
   submit?: SubmissionHandler;
 }>();
 </script>
 
 <template>
   <Form @submit="submit" :validation-schema="validationSchema">
-    <slot />
     <div
       v-for="{ as, name, label, children, ...attrs } in fieldSchema"
       :key="name"

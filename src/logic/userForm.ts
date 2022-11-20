@@ -1,6 +1,6 @@
 import * as Yup from "yup";
 import type IFormField from "@/interfaces/IFormFieldSchema";
-import type IUserValidationFormSchema from "@/interfaces/IUserValidationFormSchema";
+import type IUserFormValidationFormSchema from "@/interfaces/IUserFormValidationFormSchema";
 import {
   personFormFieldSchema,
   personFormValidationSchema,
@@ -15,7 +15,7 @@ export const userFormFieldSchema: IFormField[] = [
     type: "email",
   },
 ];
-export const userValidationFormSchema: IUserValidationFormSchema = {
+export const userFormValidationSchema: IUserFormValidationFormSchema = {
   ...personFormValidationSchema,
   email: Yup.string().email().required(),
 };

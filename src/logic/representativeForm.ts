@@ -1,4 +1,3 @@
-import * as Yup from "yup";
 import type IFormField from "@/interfaces/IFormFieldSchema";
 import type IRepresentativeFormValidationSchema from "@/interfaces/IRepresentativeFormValidationSchema";
 import { parentFormValidationSchema } from "./parentForm";
@@ -10,7 +9,7 @@ export const representativeFormFieldSchema: IFormField[] = [
     name: "ci",
   },
 ];
-export const representativeValidationFormSchema: IRepresentativeFormValidationSchema =
+export const representativeFormValidationSchema: IRepresentativeFormValidationSchema =
   {
     ci: parentFormValidationSchema.ci,
   };
