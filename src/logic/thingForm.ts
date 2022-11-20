@@ -2,8 +2,6 @@ import * as Yup from "yup";
 import type IFormFieldSchema from "@/interfaces/IFormFieldSchema";
 import type IThingFormValidationSchema from "@/interfaces/IThingFormValidationSchema";
 
-import { reactive } from "vue";
-
 export const thingFormFieldSchema: IFormFieldSchema[] = [
   {
     name: "name",
