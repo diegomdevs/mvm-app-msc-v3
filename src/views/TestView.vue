@@ -1,20 +1,8 @@
 <script setup lang="ts">
-import DynamicForm from "@/components/DynamicForm.vue";
-import {
-  userFormFieldSchema,
-  userValidationFormSchema,
-} from "@/logic/userForm";
-
-function onSubmit(values: any) {
-  console.log(JSON.stringify(values, null, 2));
-}
+import NavigationOption from "@/components/NavigationOption.vue";
 </script>
 <template>
   <main>
-    <DynamicForm
-      :field-schema="userFormFieldSchema"
-      :validation-schema="userValidationFormSchema"
-      :submit="(values) => onSubmit(values)"
-    />
+    <NavigationOption name="Hola" url="/" />
   </main>
 </template>
