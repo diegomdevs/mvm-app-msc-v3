@@ -21,9 +21,10 @@ section.navigation-option-container {
   align-items: center;
   margin: 0 auto;
   border-radius: 10px;
-  width: 200px;
-  min-height: 40px;
+  width: inherit;
+  height: inherit;
   text-align: center;
+  border: 1px solid white;
   background-color: var(--primary-blue);
 }
 section.navigation-option-container > .navigation-option:only-child {
